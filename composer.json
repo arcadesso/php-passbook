@@ -22,9 +22,6 @@
     "autoload":     {
         "psr-0": {
 			"Passbook\\": "src/"
-		},
-		"psr-4": {
-			"Passbook\\": "src/"
 		}
     },
     "extra": {
