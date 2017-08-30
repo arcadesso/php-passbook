@@ -414,7 +414,7 @@ class PassFactory
     {
         // Check if JSON_UNESCAPED_SLASHES is defined to support PHP 5.3.
         $options = defined('JSON_UNESCAPED_SLASHES') ? JSON_UNESCAPED_SLASHES : 0;
-        if(isset($array['barcode']) && isset(RUBY_ENCODE_SCRIPT_COMMAND)) {
+        if(isset($array['barcode']) && null != RUBY_ENCODE_SCRIPT_COMMAND) {
             $barcode_base64 = $array['barcode']['message'];
             $json = json_encode($array, $options);
             $command = RUBY_ENCODE_SCRIPT_COMMAND . " $barcode_base64";
