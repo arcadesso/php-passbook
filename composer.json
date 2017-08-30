@@ -1,9 +1,9 @@
 {
-    "name":        "eo/passbook",
+    "name":        "arcadesso/php-passbook",
     "type":        "library",
     "description": "iOS Passbook for PHP",
     "keywords":    ["passbook", "ios", "pass", "mobile", "wallet", "coupons", "tickets"],
-    "homepage":    "https://github.com/eymengunay/php-passbook",
+    "homepage":    "https://github.com/arcadesso/php-passbook.git",
     "license":     "MIT",
     "authors": [
         {
@@ -20,7 +20,12 @@
         "phpunit/phpunit": "3.7.*"
     },
     "autoload":     {
-        "psr-0": { "Passbook\\": "src/" }
+        "psr-0": {
+			"Passbook\\": "src/"
+		},
+		"psr-4": {
+			"Passbook\\": "src/"
+		}
     },
     "extra": {
         "branch-alias": {
