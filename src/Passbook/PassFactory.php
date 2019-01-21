@@ -419,7 +419,11 @@ class PassFactory
             $json = json_encode($array, $options);
             $command = RUBY_ENCODE_SCRIPT_COMMAND . " $barcode_base64";
             $barcode = exec($command);
-            $json = str_replace($barcode_base64, substr($barcode, 1, sizeof($barcode) -2), $json);
+            if (null !== $barcode && is_countable($barcode)) {
+                $json = str_replace($barcode_base64, substr($barcode, 1, sizeof($barcode) - 2), $json);
+            } else {
+                $json = json_encode($array, $options);
+            }
         } else {
             $json = json_encode($array, $options);
         }
